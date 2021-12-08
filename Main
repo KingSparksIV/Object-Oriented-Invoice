@@ -57,15 +57,15 @@ public class Main {
                 pts.setorderprice(price);
                 purchaselist.add(pts);
 
-        } while (! answer.equals("done"));
-        double totalcost = 0.0;
+       } while (! answer.equals("done"));
+        double total = 0.0;
         for (int i = 0; i < purchaselist.size() ; i++)
         {
-            totalcost += purchaselist.get(i).getorderprice();
+            total += purchaselist.get(i).getorderprice();
 
         }
-        System.out.println("Your order total is: $" + totalcost);
-        System.out.println("Thank you for your purchase!");
-
+        System.out.println("Your total is: $" + total);
+        System.out.println("Thank you for ordering!");
+        
     }
 }
