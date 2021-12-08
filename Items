@@ -1,0 +1,26 @@
+package com.company;
+
+public class Items {
+    private double prices;
+    private String products;
+
+    public double getprices() {
+
+        return prices;
+    }
+
+    public void setprices(double price) {
+
+        this.prices = price;
+    }
+
+    public String getproducts() {
+
+        return products;
+    }
+
+    public void setproducts(String products) {
+
+        this.products = products;
+    }
+}
