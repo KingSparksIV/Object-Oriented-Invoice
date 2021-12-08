@@ -1,0 +1,71 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        ArrayList<Items> itemsinstock = new ArrayList<Items>();
+
+
+        Items inv = new Items();
+        inv.setproducts("Bison Sweater");
+        inv.setprices(55.99);
+        itemsinstock.add(inv);
+
+        inv = new Items();
+        inv.setproducts("Bison Tee");
+        inv.setprices(14.99);
+        itemsinstock.add(inv);
+
+        inv = new Items();
+        inv.setproducts("Bison Hoodie");
+        inv.setprices(23.99);
+        itemsinstock.add(inv);
+
+
+        inv = new Items();
+        inv.setproducts("Bison Bumpersticker");
+        inv.setprices(4.99);
+        itemsinstock.add(inv);
+
+        String answer = "";
+
+        ArrayList<Order> purchaselist = new ArrayList<Order>();
+        Scanner input = new Scanner(System.in);
+        double price;
+        price = 0.00;
+
+
+        do {
+            System.out.println(
+                    "\n   Items Offered:" +
+                            "\n Bison Sweater" + " $55.99" +
+                            "\n Bison Tee" + " $14.99" +
+                            "\n Bison Hoodie" + " $23.99" +
+                            "\n Bison Bumpersticker"+ " $4.99");
+            System.out.println("Please enter the item you would like to add or input done if you have finished your transaction ");
+            answer = input.nextLine();
+
+                for (int i = 0; i < itemsinstock.size(); i++) {
+                    if (answer.equals(itemsinstock.get(i).getproducts())){
+                        price = itemsinstock.get(i).getprices();
+                    }
+                }
+                Order pts = new Order();
+                pts.setprodordered(answer);
+                pts.setorderprice(price);
+                purchaselist.add(pts);
+
+        } while (! answer.equals("done"));
+        double totalcost = 0.0;
+        for (int i = 0; i < purchaselist.size() ; i++)
+        {
+            totalcost += purchaselist.get(i).getorderprice();
+
+        }
+        System.out.println("Your order total is: $" + totalcost);
+        System.out.println("Thank you for your purchase!");
+
+    }
+}
