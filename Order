@@ -1,0 +1,24 @@
+package com.company;
+
+public class Order {
+    private double orderprice;
+    private String prodordered;
+
+    public double getorderprice() {
+        return orderprice;
+    }
+
+    public void setorderprice(double orderprice) {
+
+        this.orderprice = orderprice;
+    }
+
+    public String getprodordered() {
+
+        return prodordered;
+    }
+    public void setprodordered(String orderprice) {
+
+    this.prodordered = prodordered;
+    }
+}
